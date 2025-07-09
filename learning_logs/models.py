@@ -1,10 +1,11 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Topic(models.Model):
     """Learning topic the user created"""
     text = models.CharField(max_length=200)
     date_added = models.DateTimeField(auto_now_add=True)
-    
+    owner = models.ForeignKey(User)  # owner 是 ForeignKey 的实例，指向 User 模型
     def __str__(self):
         """Return the model in string format"""
         return self.text
