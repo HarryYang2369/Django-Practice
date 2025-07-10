@@ -139,11 +139,11 @@ cwd = os.getcwd()
 if cwd == '/app' or cwd[:4] == '/tmp':
     import dj_database_url
     DATABASES = {
-        'default': dj_database_url.config(default='postgres://localhost')
+        'default': dj_database_url.config(default='postgres://localhost/learning_log/db.sqlite3')
     }
     
     # Let request.is_secure() recognize X-Forwarded-Proto header
-    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')\
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     
     # Support all host headers
     ALLOWED_HOSTS = ['*']
