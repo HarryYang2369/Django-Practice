@@ -139,7 +139,7 @@ cwd = os.getcwd()
 if cwd == '/app' or cwd[:4] == '/tmp':
     import dj_database_url
     DATABASES = {
-        'default': dj_database_url.config(default='postgres://localhost/db.sqlite3')
+        'default': dj_database_url.config(default='postgres://localhost')
     }
     
     # Let request.is_secure() recognize X-Forwarded-Proto header
